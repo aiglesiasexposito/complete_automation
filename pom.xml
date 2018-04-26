@@ -17,6 +17,8 @@
         <module>java_support_framework</module>
         <module>mobile_test</module>
         <module>web_test</module>
+        <module>api_test</module>
+
     </modules>
 
     <properties>
