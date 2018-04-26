@@ -212,18 +212,6 @@ public class SimpleGetTest {
         Assert.assertEquals("Correct Success code was returned", successCode, "OPERATION_SUCCESS");
     }
 
-    public class Book {
-
-        String isbn;
-        String title;
-        String subtitle;
-        String author;
-        String published;
-        String publisher;
-        int pages;
-        String description;
-        String website;
-    }
 
     @Test
     public void JsonPathUsage() throws MalformedURLException
@@ -237,14 +225,12 @@ public class SimpleGetTest {
 
         // Read all the books as a List of String. Each item in the list
         // represent a book node in the REST service Response
-        List<Book> allBooks = jsonPathEvaluator.getList("books", Book.class);
+        List<String> allBooks = jsonPathEvaluator.getList("books.title");
 
         // Iterate over the list and print individual book item
-        // Note that every book entry in the list will be complete Json object of book
-        for(Book book : allBooks)
+        for(String book : allBooks)
         {
-            System.out.println("Book: " + book.title);
+            System.out.println("Book: " + book);
         }
     }
-
 }
