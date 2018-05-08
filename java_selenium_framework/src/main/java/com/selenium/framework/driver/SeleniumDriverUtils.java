@@ -26,11 +26,10 @@ import org.springframework.context.annotation.Profile;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-import java.util.HashMap;
-import java.util.Map;
-
-import static com.support.framework.support.Property.*;
-import static com.support.framework.support.Property.DEVICE_NAME;
+import static com.support.framework.support.Property.BROWSER_HEIGHT;
+import static com.support.framework.support.Property.BROWSER_NAME;
+import static com.support.framework.support.Property.BROWSER_WIDTH;
+import static com.support.framework.support.Property.GRID_USE;
 import static org.junit.Assert.fail;
 
 @Component
@@ -51,13 +50,7 @@ class SeleniumDriverUtils {
             switch (BROWSER_NAME.toString().toLowerCase()) {
                 case "chrome":
                     ChromeDriverManager.getInstance().setup();
-                    ChromeOptions chromeOptions = new ChromeOptions();
-                    if(!DEVICE_NAME.toString().equals("NO DEVICE")){
-                        Map<String, String> mobileEmulation = new HashMap<String, String>();
-                        mobileEmulation.put("deviceName", DEVICE_NAME.toString());
-                        chromeOptions.setExperimentalOption("mobileEmulation",mobileEmulation);
-                    }
-                    driver = new ChromeDriver(chromeOptions);
+                    driver = new ChromeDriver(new ChromeOptions());
                     break;
                 case "firefox":
                     FirefoxDriverManager.getInstance().setup();
@@ -85,7 +78,7 @@ class SeleniumDriverUtils {
             }
         }
         driver.manage().deleteAllCookies();
-        LOG.info("Resizing browser to: " + BROWSER_WIDTH + "x" + BROWSER_HEIGHT + " with device: "+ DEVICE_NAME);
+        LOG.info("Resizing browser to: " + BROWSER_WIDTH + "x" + BROWSER_HEIGHT);
         driver.manage().window().setSize(new Dimension(BROWSER_WIDTH.toInt(), BROWSER_HEIGHT.toInt()));
         return driver;
     }

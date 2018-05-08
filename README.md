@@ -1,48 +1,27 @@
-#1.	Run the test from console
-
-By console
-You just need to run a single command from inside the project directory from
-terminal. 
-
-mvn clean install -pl web_test -Ddevice.web=<name>
-
-Where <name>: 
-if “NO DEVICE” -> will run by default with Chrome.
-if “iPad” -> will run as iPad in Chrome.
-
-Example: 
-mvn clean install -pl web_test -Ddevice.name=iPad
-
-Some parameters: "device.name" -> Select the device iPad, iPad Pro. By default will be NO DEVICE, so we will launch browser google chrome.
-"browser.name" -> Select the browser, by default we will launch google chrome.
-"browser.height" -> by default 900.
-"browser.width" -> by default 1400.
-
-#2.	Report Test
-You just need to go inside your project directory. 
-/target/cucumber-html-reports
-
-
 Running Your Tests
 
 mvn clean install inside the root path will run all the test modules with default settings. After cd to submodule, you can only run that module with mvn clean install You can also mvn clean install -f web_test/pom.xml to run specific submodule
 
 If you like to override default run settings you can just run it with
 
-#This will run your test on iPhone 6 simulator
-mvn clean install -Dspring.profiles.active="ios" -Ddevice.name="Iphone 6" -Dapp.file="myiosapp.ipa"
+ #This will run your test on iPhone 6 simulator
+ mvn clean install -Dspring.profiles.active="ios" -Ddevice.name="Iphone 6" -Dapp.file="myiosapp.ipa"
 By default cucumber will execute every scenario except ones with @ignore
 
-#This will run scenarios tagged with @accounts and @p1
-mvn clean -D"cucumber.options=--tags @accounts --tags @p1" install
-#This will run scenarios tagged with @accounts or @p1
-mvn clean -D"cucumber.options=--tags @accounts,@p1" install
+ #This will run scenarios tagged with @accounts and @p1
+ mvn clean -D"cucumber.options=--tags @accounts --tags @p1" install
+ #This will run scenarios tagged with @accounts or @p1
+ mvn clean -D"cucumber.options=--tags @accounts,@p1" install
+Thus
 
-
-#This will run your account test on android device named xxxxx with default imlicit wait 10 seconds
-mvn clean -D"cucumber.options=--tags @accounts" -Ddevice.name="xxxxxx" -Dimplicit.wait="10"
+ #This will run your account test on android device named xxxxx with default imlicit wait 10 seconds
+ mvn clean -D"cucumber.options=--tags @accounts" -Ddevice.name="xxxxxx" -Dimplicit.wait="10"
 See Property class in framework for more parameter
 
+Reporting
+
+After the test execution you can find generated HTML report in /target/cucumber-html-reports folder
+Project Structure
 
 Appium
 

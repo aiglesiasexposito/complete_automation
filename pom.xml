@@ -17,8 +17,6 @@
         <module>java_support_framework</module>
         <module>mobile_test</module>
         <module>web_test</module>
-        <module>api_test</module>
-
     </modules>
 
     <properties>
@@ -144,6 +142,13 @@
                 <groupId>org.slf4j</groupId>
                 <artifactId>slf4j-log4j12</artifactId>
                 <version>${slf4j.api.version}</version>
+            </dependency>
+
+
+            <dependency>
+                <groupId>com.vimalselvam</groupId>
+                <artifactId>cucumber-extentsreport</artifactId>
+                <version>3.1.2</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

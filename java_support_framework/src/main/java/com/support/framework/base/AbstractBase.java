@@ -46,6 +46,11 @@ public abstract class AbstractBase<T extends WebElement> {
         assertTrue(elementsNotPresent(elements, duration));
     }
 
+    public boolean assertContainText(T element, String text) {
+        assertTrue(element.getText().contains(text));
+        return true;
+    }
+
     public void assertElementsPresent(List<T> elements, int duration) {
         assertTrue(elementsPresent(elements, duration));
     }
@@ -66,9 +71,8 @@ public abstract class AbstractBase<T extends WebElement> {
         return element.getText().contains(text);
     }
 
-    public boolean assertContainText(T element, String text) {
-        assertTrue(element.getText().contains(text));
-        return true;
+    public boolean contains(List<T> elements, int index, String text) {
+        return elements.get(index).getText().contains(text);
     }
 
     public boolean elementNotPresent(T element) {

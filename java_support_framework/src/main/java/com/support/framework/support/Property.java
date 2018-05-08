@@ -15,7 +15,7 @@ public enum Property {
 
     //Appium Specific
     APP_FILE(System.getProperty("app.file")),
-    DEVICE_NAME(Optional.ofNullable(System.getProperty("device.web")).orElse("NO DEVICE")),
+    DEVICE_NAME(System.getProperty("device.name")),
     APPIUM_HOST(Optional.ofNullable(System.getProperty("appium.host")).orElse("127.0.0.1")),
     APPIUM_PORT(Optional.ofNullable(System.getProperty("appium.port")).orElse("0")),
     NO_RESET(Optional.ofNullable(System.getProperty("no.reset")).orElse("true")),
