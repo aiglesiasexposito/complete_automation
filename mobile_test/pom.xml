@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.test.alejandro</groupId>
+        <artifactId>ui_automation_test</artifactId>
+        <version>1.0.0</version>
+    </parent>
+
+    <artifactId>mobile_test</artifactId>
+    <version>1.0.0</version>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.test.alejandro</groupId>
+            <artifactId>java_appium_framework</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${surefire.version}</version>
+                <configuration>
+                    <systemPropertyVariables>
+                        <spring.profiles.active>Android</spring.profiles.active>
+                        <platform.name>Android</platform.name>
+                        <device.name>emulator-5554</device.name>
+                        <app.file>api-demos-debug.apk</app.file>
+                        <grid.use>false</grid.use>
+                    </systemPropertyVariables>
+                    <testFailureIgnore>true</testFailureIgnore>
+                    <workingDirectory>${basedir}</workingDirectory>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
