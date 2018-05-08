@@ -21,4 +21,3 @@ Feature: Examples
       | city     |
       | AR_RASS  |
       | SHAQRA   |
-      | AL_NAMAS |
