@@ -22,8 +22,6 @@ Appium 1.6.1
 
 **NOTE:** You can see the pom.xml configuration from web_test module.
 
-If you like to override default run settings you can just run it with:
-
 ## Mobile module
 
 `mvn clean install -Dspring.profiles.active="ios" -Ddevice.name="Iphone 6" -Dapp.file="myiosapp.ipa"`
