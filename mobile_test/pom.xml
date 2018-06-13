@@ -34,7 +34,7 @@
                         <spring.profiles.active>Android</spring.profiles.active>
                         <platform.name>Android</platform.name>
                         <device.name>emulator-5554</device.name>
-                        <app.file>api-demos-debug.apk</app.file>
+                        <app.file>demo.apk</app.file>
                         <grid.use>false</grid.use>
                     </systemPropertyVariables>
                     <testFailureIgnore>true</testFailureIgnore>
