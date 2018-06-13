@@ -131,7 +131,7 @@ URL that you want to test.
 **grid.use - true** with **grid.url - localhost:32802**  
 If you want to launch your test in your local machine you have to put a `false` grid.use  
 
-## Configuration pom.xml Mobile module 
+# Configuration pom.xml Mobile module 
 ```
 <configuration>
     <systemPropertyVariables>
