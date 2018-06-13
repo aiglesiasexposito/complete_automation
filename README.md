@@ -69,7 +69,7 @@ A **implicit wait** is to tell Driver to poll for a certain amount of time when 
 
 A **explicit wait** is the code you define to wait for a certain condition to occur before proceeding further in the code. WebDriverWait in combination with ExpectedCondition is the most common way this can be accomplished.  
 ```java
-If (given implicit time >= explicit time)  
+if (given implicit time >= explicit time)  
     explicit time is ignored and driver will wait till implicit wait value  
 if (given explicit time >= implicit time)  
     max time taken to find the element (or condition) will vary between implicit wait value and the sum of implicit wait and explicit wait  
