@@ -63,7 +63,7 @@ While locating element with findElement:
 ```java
 MobileElement element = alertDialogsPage.getDriver().findElement(By.xpath("//xpath']"));  
 ```
-**Implicit and Explicit Waits**
+## Implicit and Explicit Waits.  
 
 A **implicit wait** is to tell Driver to poll for a certain amount of time when trying to find an element or elements if they are not immediately available. Once set, the implicit wait is set for the life of the Web Driver object instance until it changed again.  
 
@@ -76,7 +76,7 @@ if (given explicit time >= implicit time)
 ```    
 Setting high implicit wait is blindly telling Selenium, if you don't find my element, then wait for a certain time until. No matter what it is, no matter the consequence, no matter what happened, you wait until you either find it or wait duration has passed. So try to keep your implicit wait value as low as possible (better set to default value 1) and use explicit wait where wait needed
 
-**Controlling Implicit Wait**  
+## Controlling Implicit Wait . 
 While using PageObject driver.manage.timeouts does not have any effect. Each element holds its' own implicit timeout and its assigned while decorating the elements
 
 So If you need to change your implicit wait time you can do  
@@ -88,13 +88,13 @@ You can set it back to default value any time with below code
 If you want to override implicit wait time for elements that located with findElement() you can do  
 `alertDialogsPage.getHelper().setDriverWaitTime(10);`  
 
-**Controlling Explicit Wait**  
+## Controlling Explicit Wait . 
 Explicit wait is same for elements for both findElement() and PageObject
 ```java
 new WebDriverWait(driver, seconds).until(ExpectedConditions.visibilityOf(element));  
 new WebDriverWait(driver, seconds).until(ExpectedConditions.elementToBeClickable(By.xpath("//xpath")));  
 ```
-**Override Both Implicit and Explicit Wait**  
+## Override Both Implicit and Explicit Wait . 
 Annotation @WithTimeout will override every wait and wait for that element until exact that value
 ```java
 @AndroidFindBy(id = "checkbox_button")  
