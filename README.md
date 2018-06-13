@@ -54,9 +54,9 @@ While using PageFactory and AppiumFieldDecorator define and locate elements. It 
 @iOSFindBy(id = "check_button_id_in_your_ios_app")  
 public MobileElement CHECKBOX_BUTTON;  
 ``` 
-#If your element is not native. You must use @FindBy to locate it.  
-#But for sure you need to change context to interact with it.  
-#For easy change you can use `alertDialogsPage.getHelper().switchContextToFirstWEBVIEW();`  
+If your element is not native. You must use @FindBy to locate it.  
+But for sure you need to change context to interact with it.  
+For easy change you can use `alertDialogsPage.getHelper().switchContextToFirstWEBVIEW();`  
 ```java
 @FindBy(id = "web_view_id")
 public MobileElement CHECKBOX_BUTTON;

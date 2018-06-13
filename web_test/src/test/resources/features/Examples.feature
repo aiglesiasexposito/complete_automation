@@ -1,23 +1,41 @@
-@examples
+@FunctionalTest
 
-Feature: Examples
+Feature: Read any sport news
   As a user
-  I want to see the difference between declarative and imperative automation testing
-  So that I can do better tests cases
+  I want to go to the sport section
+  So that I can read the first news from any sport section
 
-#  #BAD DESCRIPTION (IMPERATIVE)
-#  Scenario: I login to amazon
-#    Given I am on 'Login Page' screen
-#    When I click on sign in
-#    Then the 'Credentials Page' should be displayed
-
-  #GOOD DESCRIPTION (DECLARATIVE)
-  Scenario Outline: User invited see first top offers from any city.
+  @Invited
+  Scenario Outline: User invited read first news from any sport section
     Given I am a invited user in the platform
-    When I go to top offers section
-    Then I can to read the first top offers from the city selected
-      | city | <city> |
-    Examples: Several cities
-      | city     |
-      | AR_RASS  |
-      | SHAQRA   |
+    When I go to any sport news
+      | section | <section> |
+    Then I can to read the first news story
+    Examples: Several section sports
+      | section  |
+      | HOME     |
+#      | FOOTBALL |
+#      | FORMULA1 |
+#      | CRICKET  |
+#      | RUGBY    |
+#      | TENNIS   |
+
+  @Registered
+  Scenario Outline: User registered read first news from any sport section
+    Given I am a registered user in the platform
+    When I go to any sport news
+      | section | <section> |
+    Then I can to read the first news story
+    Examples: Several section sports
+      | section  |
+      | HOME     |
+#      | FOOTBALL |
+#      | FORMULA1 |
+#      | CRICKET  |
+#      | RUGBY    |
+#      | TENNIS   |
+
+  @ControlTest
+  Scenario: User is registered and start on homePage
+    Given I am a registered user in the platform
+    Then I am in the homePage

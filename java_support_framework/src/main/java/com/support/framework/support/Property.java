@@ -32,9 +32,7 @@ public enum Property {
     GRID_USE(System.getProperty("grid.use")),
     SELENIUM_LOG(Optional.ofNullable(System.getProperty("selenium.log")).orElse("WARNING")),
     BROWSER_HEIGHT(Optional.ofNullable(System.getProperty("browser.height")).orElse("900")),
-    BROWSER_WIDTH(Optional.ofNullable(System.getProperty("browser.width")).orElse("1400")),
-
-    TESTRAIL_URL(System.getProperty("testrail.url"));
+    BROWSER_WIDTH(Optional.ofNullable(System.getProperty("browser.width")).orElse("1400"));
 
     private String value;
 

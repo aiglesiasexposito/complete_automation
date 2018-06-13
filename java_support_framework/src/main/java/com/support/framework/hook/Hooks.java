@@ -11,7 +11,6 @@ import java.util.Collection;
 import java.util.List;
 
 import static com.support.framework.support.Property.PLATFORM_NAME;
-import static com.support.framework.support.Property.TESTRAIL_URL;
 import static com.support.framework.support.Util.getCurrentScenario;
 import static com.support.framework.support.Util.setCurrentScenario;
 import static com.support.framework.support.Util.takeScreenShotAsByte;
@@ -24,16 +23,8 @@ public class Hooks {
         Scenario scenario = getCurrentScenario();
         LOG.info("### " + scenario.getStatus() + " ###");
         LOG.info("### Ending scenario: " + scenario.getName() + " ###");
-        List<String> caseList = getScenariosStartWithCaseIds(scenario.getSourceTagNames());
-        for (String currentTag : caseList) {
-            scenario.write("<a href=\"" + TESTRAIL_URL + currentTag + "\"> Test Scenario: C" + currentTag + "</a>");
-        }
         if (scenario.isFailed()) {
             scenario.embed(takeScreenShotAsByte(driver), "image/png");
-            //ToDo Need better Selenium control
-            /*if (!PLATFORM_NAME.toString().equalsIgnoreCase("web")) {
-                scenario.embed(captureLog(driver).getBytes(StandardCharsets.UTF_8), "text/html");
-            }*/
         }
         ThreadLocalMap.cleanup();
     }

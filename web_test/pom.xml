@@ -41,7 +41,8 @@
                         <spring.profiles.active>Selenium</spring.profiles.active>
                         <platform.name>Selenium</platform.name>
                         <browser.name>Chrome</browser.name>
-                        <base.url>https://www.</base.url>
+                        <device.name>NO DEVICE</device.name>
+                        <base.url>https://www.bbc.com</base.url>
                         <grid.use>false</grid.use>
                         <grid.url>172.18.0.2:4444</grid.url>
                     </systemPropertyVariables>

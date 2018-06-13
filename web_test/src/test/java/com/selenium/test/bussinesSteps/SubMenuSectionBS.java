@@ -1,8 +1,8 @@
-package com.selenium.test.pages.bussinesSteps;
+package com.selenium.test.bussinesSteps;
 
 
 import com.selenium.framework.base.SeleniumBase;
-import com.selenium.test.pages.promotionsPage.CitiesEnum;
+import com.selenium.test.pages.menuPage.SubMenuTypeEnum;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -12,16 +12,16 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Scope("cucumber-glue")
-public class CityPromotionsSectionBS extends SeleniumBase {
+public class SubMenuSectionBS extends SeleniumBase {
 
-    public void accessToCity(CitiesEnum citiesMenu) {
+    public void accessToSection(SubMenuTypeEnum subMenuTypeEnum) {
 
-        WebElement section = getDriver().findElement(citiesMenu.getBySelector());
+        WebElement section = getDriver().findElement(subMenuTypeEnum.getBySelector());
 
         new WebDriverWait(getDriver(), 5, 500).until(ExpectedConditions.elementToBeClickable(section)).click();
     }
 
-    public CityPromotionsSectionBS(WebDriver driver) {
+    public SubMenuSectionBS(WebDriver driver) {
         super(driver);
     }
 

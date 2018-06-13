@@ -25,13 +25,13 @@ abstract class AbstractSeleniumBase extends AbstractBase<WebElement> {
         this.driver = driver;
     }
 
-    public void assertElementAndUrl(WebElement element, String url, int duration) {
+    public void assertElementAndUrl(WebElement element, int duration) {
         assertElementPresent(element, duration);
-        assertEquals(BASE_URL + url, driver.getCurrentUrl());
+        assertEquals(BASE_URL, driver.getCurrentUrl());
     }
 
-    public void assertUrl(String url) {
-        assertEquals(BASE_URL + url, driver.getCurrentUrl());
+    public void assertUrl() {
+        assertEquals(BASE_URL, driver.getCurrentUrl());
     }
 
     public void dragAndDrop() {
@@ -48,8 +48,8 @@ abstract class AbstractSeleniumBase extends AbstractBase<WebElement> {
         return driver;
     }
 
-    public void getURL(String subURL) {
-        driver.get(BASE_URL + subURL);
+    public void getURL() {
+        driver.get(BASE_URL.toString());
     }
 
     public Alert switchToAlert(int duration) {

@@ -1,4 +1,4 @@
-package com.selenium.test.pages.bussinesSteps;
+package com.selenium.test.bussinesSteps;
 
 import com.selenium.framework.base.SeleniumBase;
 import com.selenium.test.pages.homePage.HomePage;
@@ -17,8 +17,11 @@ public class HomePageBS extends SeleniumBase {
 
     public void doLogin() {
 
-
-        }
+        hp.sign_in_button.click();
+        hp.user_identifier_field.sendKeys("soprasteria2018@gmail.com");
+        hp.user_password_field.sendKeys("s0prasteria2018");
+        hp.submit_button.click();
+    }
 
     public HomePageBS(WebDriver driver) {
         super(driver);
