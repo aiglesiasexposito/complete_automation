@@ -40,6 +40,14 @@ class TestCapabilities {
         LOG.info("Getting Desktop Capabilities");
         desiredCapabilities = new DesiredCapabilities();
         desiredCapabilities.setCapability(CapabilityType.LOGGING_PREFS, loggingPreferences);
+                switch (BROWSER_NAME.toString().toLowerCase()) {
+            case "chrome":
+                desiredCapabilities = DesiredCapabilities.chrome();
+                break;
+            case "firefox":
+                desiredCapabilities = DesiredCapabilities.firefox();
+                break;
+        }
         return desiredCapabilities;
     }
 
