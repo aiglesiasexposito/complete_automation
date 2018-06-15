@@ -15,11 +15,11 @@ public class HomePageBS extends SeleniumBase {
     @Autowired
     public HomePage hp;
 
-    public void doLogin() {
+    public void doLogin(String user, String password) {
 
         hp.sign_in_button.click();
-        hp.user_identifier_field.sendKeys("soprasteria2018@gmail.com");
-        hp.user_password_field.sendKeys("s0prasteria2018");
+        hp.user_identifier_field.sendKeys(user);
+        hp.user_password_field.sendKeys(password);
         hp.submit_button.click();
     }
 

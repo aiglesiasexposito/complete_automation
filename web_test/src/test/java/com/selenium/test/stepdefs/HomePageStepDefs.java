@@ -6,6 +6,8 @@ import com.selenium.test.pages.homePage.HomePage;
 import com.selenium.test.pages.menuPage.PrincipalMenu;
 import com.selenium.test.pages.menuPage.SubMenuTypeEnum;
 import com.selenium.test.pages.newsPage.NewsPage;
+import com.support.framework.support.DataFactory;
+import cucumber.api.PendingException;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -51,12 +53,24 @@ public class HomePageStepDefs {
     @Given("^I am a registered user in the platform$")
     public void iAmARegisteredUserInThePlatform(){
         hp.getURL();
-        hpbs.doLogin();
+        hpbs.doLogin("soprasteria2018@gmail.com","s0prasteria2018");
         hp.assertContainText(hp.sign_in_button,"Your account");
     }
 
     @Then("^I am in the homePage$")
     public void iAmInTheHomePage() throws Throwable {
         hp.assertContainText(hp.sign_in_button,"Your account");
+    }
+
+
+    @When("^I try register in the platform with invalid credentials$")
+    public void iTryRegisterInThePlatformWithInvalidCredentials() {
+        hp.getURL();
+        hpbs.doLogin(DataFactory.getPerson().getEmail(),DataFactory.getPerson().getPassword());
+    }
+
+    @Then("^I cant do login$")
+    public void iCantDoLogin() {
+        hp.assertElementPresent(hp.message_text);
     }
 }

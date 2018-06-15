@@ -24,6 +24,10 @@ public class HomePage extends SeleniumBase {
     @FindBy(id = "submit-button")
     public static WebElement submit_button;
 
+    @FindBy(className = "form-message--error")
+    public static WebElement message_text;
+
+
 
     public HomePage(WebDriver driver) {
         super(driver);
